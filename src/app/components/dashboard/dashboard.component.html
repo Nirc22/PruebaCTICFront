@@ -1,0 +1,42 @@
+<div class="panel-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Proveedor</th>
+        <th scope="col">Telefono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td>{{producto.idproducto}}</td>
+        <td>{{producto.nombre }}</td>
+        <td>{{producto.precio}}</td>
+        <td>{{producto.idcategoria.nombre}}</td>
+        <button (click)="updateCategoria(producto)">{{producto.idcategoria.nombre}}</button>
+
+        <td>{{producto.idproveedor.nombre}}</td>
+        <td>{{producto.idproveedor.telefono}}</td>
+        <!-- <td>{{pacientes.nmidraza.dsnombre}}</td>
+        <td>{{pacientes.fenacimiento}}</td>
+        <td>{{pacientes.nmidpersona.nmidtipoidentificacion.dsnombre}}</td>
+        <td>{{pacientes.nmidpersona.nmidentificacion}}</td>
+        <button (click)="updatePersona(pacientes)">{{pacientes.nmidpersona.dsnombre}}</button> -->
+        <!-- <td>{{pacientes.nmidpersona.dsnombre}}</td> -->
+        <!-- <td>{{pacientes.nmidpersona.dsapellido}}</td>
+        <td>{{pacientes.nmidpersona.dsciudad}}</td>
+        <td>{{pacientes.nmidpersona.dsdireccion}}</td>
+        <td>{{pacientes.nmidpersona.nmtelefono}}</td>
+        <td>{{pacientes.feregistro}}</td> -->
+        <td>
+          <!-- <button class="button" (click)="borrarPaciente(pacientes)"><i class="bi bi-trash-fill"></i></button> -->
+          <button class="button" (click)="updateProducto(producto)"><i class="bi bi-pencil-square">Actualizar</i></button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,54 @@
+<div id="componente">
+  <form class="form" id="contact-form" enctype="multipart/form-data" [formGroup]="formCrearProducto"
+    (ngSubmit)="crearProducto()"> <!--(ngSubmit)="crearPersona()"-->
+    <div class="formulario">
+      <div class="titulo">
+        <h1>Registro Producto</h1>
+      </div>
+      <div class="input">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="fomr-control" id="nombre" formControlName="nombre">
+        <div class="alert alert-danger mt-2" [hidden]="nombre.valid || nombre.pristine && nombre.untouched">
+          El nombre es obligatorio.
+        </div>
+      </div>
+      <div class="input">
+        <label for="nombre" class="form-label">Precio</label>
+        <input type="number" class="fomr-control" id="precio" formControlName="precio">
+        <div class="alert alert-danger mt-2" [hidden]="precio.valid || precio.pristine && precio.untouched">
+          El precio es obligatorio.
+        </div>
+      </div>
+      <div class="input" formGroupName="idcategoria">
+        <label>Categorias</label>
+        <select class="form-control" id="idcategoria" formControlName="idcategoria">
+          <option *ngFor="let categoria of categorias" value={{categoria.idcategoria}}>{{categoria.nombre}}</option>
+        </select>
+        <!-- <input *ngFor="let actor of actores" type="checkbox" value="{{actor._id}}" /> -->
+
+        <div class="alert alert-danger mt-2" [hidden]="idcategoria.dirty || idcategoria.untouched">
+          Elegir la categoria es obligatorio.
+        </div>
+      </div>
+
+
+      <div class="input" formGroupName="idproveedor">
+        <label>Generos</label>
+        <select class="form-control" id="idproveedor" formControlName="idproveedor">
+          <option *ngFor="let proveedor of proveedores" value={{proveedor.idproveedor}}>{{proveedor.nombre}}</option>
+        </select>
+        <div class="alert alert-danger mt-2" [hidden]="idproveedor.dirty || idproveedor.untouched">
+          Elegir el proveedor es obligatorio.
+        </div>
+      </div>
+      <div class="button">
+
+        <!-- <input type="submit" value="Crear"> -->
+        <button [disabled]="formCrearProducto.invalid" type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data"
+          >Crear</button><!--[disabled]="formCrearPelicula.invalid"-->
+      </div>
+      <!-- <div class="input" *ngIf="responseService && !responseService.ok">{{ responseService.msg }}</div> -->
+    </div>
+  </form>
+
+</div>
