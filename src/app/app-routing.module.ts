@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { UpdateProductoComponent } from './components/update-producto/update-producto.component';
+import { AuthGuard } from './helpers/auth.guard';
 
 
 const routes: Routes = [
@@ -17,15 +18,19 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'producto',
-    component: ProductoComponent
+    component: ProductoComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'updateProducto',
-    component: UpdateProductoComponent
+    component: UpdateProductoComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

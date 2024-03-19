@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CategoriaComponent } from '../categoria/categoria.component';
 import { ProveedorComponent } from '../proveedor/proveedor.component';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,27 +13,42 @@ import { ProveedorComponent } from '../proveedor/proveedor.component';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private matDialog: MatDialog) { }
+  token: any;
+  header: any;
+
+  constructor(private matDialog: MatDialog, private authService: AuthService, private rotuer: Router) { }
 
   ngOnInit(): void {
+    this.authService.getTokenObservable().subscribe(() => {
+      this.validarToken();
+    })
+    // this.validarToken();
+  }
+
+  validarToken(){
+    this.token = this.authService.getToken();
+    if (this.token) {
+      this.header = true;
+    } else {
+      this.header = false;
+      console.log('No existe token')
+    }
+
   }
 
   crearProducto(){
     const dialogRef = this.matDialog.open(CategoriaComponent, {
-      // data: {
-      //   reviewData: review,
-      //   formValues: this.formActualizarReview.value,
-      // },
     });
   }
 
   crearProveedor(){
     const dialogRef = this.matDialog.open(ProveedorComponent, {
-      // data: {
-      //   reviewData: review,
-      //   formValues: this.formActualizarReview.value,
-      // },
     });
+  }
+
+  logOut() {
+    localStorage.removeItem("token")
+    this.rotuer.navigate(['login']);
   }
 
 }

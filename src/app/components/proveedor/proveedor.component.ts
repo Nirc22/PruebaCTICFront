@@ -20,6 +20,14 @@ export class ProveedorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get nombre(){
+    return this.formProveedor.get('nombre') as FormControl;
+  }
+
+  get telefono(){
+    return this.formProveedor.get('telefono') as FormControl;
+  }
+
   crearProveedor(){
     const productoData = this.formProveedor.value;
     this.proveedorService.crearProveedor(this.formProveedor.value).subscribe(

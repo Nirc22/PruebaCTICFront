@@ -1,20 +1,25 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
-    <button class="btn">
+    <span>Tienda</span>
+    <button *ngIf="header" class="btn">
       <i class="bi bi-patch-plus" [routerLink]="['producto']">CrearProducto</i>
     </button>
     <!-- <a class="navbar-brand" href="crearPaciente">Crear Paciente</a> -->
-    <button class="btn">
+    <button *ngIf="header" class="btn">
       <i class="bi bi-person-add" (click)="crearProducto()">CrearCategoria</i>
     </button>
 
-    <button class="btn">
+    <button *ngIf="header" class="btn">
       <i class="bi bi-box-arrow-in-right"(click)="crearProveedor()">CrearProveedor</i>
       <!-- <a class="navbar-brand">Logout</a> -->
     </button>
 
-    <button class="btn">
+    <button *ngIf="header" class="btn">
       <i class="bi bi-patch-plus" [routerLink]="['dashboard']">Dashboard</i>
+    </button>
+
+    <button *ngIf="header" class="btn">
+      <i class="bi bi-patch-plus" (click)="logOut()">Salir</i>
     </button>
 
   </div>

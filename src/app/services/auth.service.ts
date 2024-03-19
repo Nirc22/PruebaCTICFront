@@ -12,6 +12,9 @@ import { Observable, catchError, throwError, BehaviorSubject, tap, map } from 'r
 })
 export class AuthService {
 
+  private tokenSubject = new BehaviorSubject<string | null>(localStorage.getItem('token'));
+
+
   constructor(private http: HttpClient) { }
 
   login(creds: LoginRequets){
@@ -32,5 +35,9 @@ export class AuthService {
 
   getToken(){
     return localStorage.getItem('token');
+  }
+
+  getTokenObservable() {
+    return this.tokenSubject.asObservable();
   }
 }

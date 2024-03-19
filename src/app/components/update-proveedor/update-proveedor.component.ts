@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProveedorService } from 'src/app/services/proveedor/proveedor.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -21,6 +21,14 @@ export class UpdateProveedorComponent implements OnInit {
   ngOnInit(): void {
     this.datos();
 
+  }
+
+  get nombre(){
+    return this.formActualizarProveedor.get('nombre') as FormControl;
+  }
+
+  get telefono(){
+    return this.formActualizarProveedor.get('telefono') as FormControl;
   }
 
   datos(){
