@@ -12,6 +12,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InterceptorInterceptor } from './helpers/interceptor.interceptor';
 import { ProductoComponent } from './components/producto/producto.component';
 import { UpdateProductoComponent } from './components/update-producto/update-producto.component';
+import { CategoriaComponent } from './components/categoria/categoria.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { UpdateProductoComponent } from './components/update-producto/update-pro
     HeaderComponent,
     DashboardComponent,
     ProductoComponent,
-    UpdateProductoComponent
+    UpdateProductoComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import { UpdateProductoComponent } from './components/update-producto/update-pro
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {

@@ -14,4 +14,16 @@ export class CategoriaService {
   getCategorias():Observable<Categoria>{
     return this.http.get<Categoria>(environment.urlApi+"getCategorias")
   }
+
+  crearCategoria(categoria:any){
+    return this.http.post<any>(environment.urlApi+"crearCategoria", categoria)
+  }
+
+  getCategoriaById(id:any):Observable<Categoria>{
+    return this.http.get<Categoria>(environment.urlApi+"getCategoriaById/"+id)//terminar de hacer
+  }
+
+  updateCategoria(form:any, id:any){
+    return this.http.put<any>(environment.urlApi+"actualizarCategoria/"+id, form)
+  }
 }
