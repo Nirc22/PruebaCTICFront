@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,7 +11,6 @@ import { InterceptorInterceptor } from './helpers/interceptor.interceptor';
 import { ProductoComponent } from './components/producto/producto.component';
 import { UpdateProductoComponent } from './components/update-producto/update-producto.component';
 import { CategoriaComponent } from './components/categoria/categoria.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,7 +28,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule,
   ],
   providers: [
     {
