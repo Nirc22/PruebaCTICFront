@@ -12,6 +12,16 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { UpdateProductoComponent } from './components/update-producto/update-producto.component';
 import { CategoriaComponent } from './components/categoria/categoria.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ProveedorComponent } from './components/proveedor/proveedor.component';
+import { UpdateProveedorComponent } from './components/update-proveedor/update-proveedor.component';
+import { UpdateCategoriaComponent } from './components/update-categoria/update-categoria.component'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +30,10 @@ import { CategoriaComponent } from './components/categoria/categoria.component';
     DashboardComponent,
     ProductoComponent,
     UpdateProductoComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    ProveedorComponent,
+    UpdateProveedorComponent,
+    UpdateCategoriaComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +41,11 @@ import { CategoriaComponent } from './components/categoria/categoria.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [
     {

@@ -23,7 +23,7 @@ export class CategoriaService {
     return this.http.get<Categoria>(environment.urlApi+"getCategoriaById/"+id)//terminar de hacer
   }
 
-  updateCategoria(form:any, id:any){
+  updateCategoria(id:any, form:any){
     return this.http.put<any>(environment.urlApi+"actualizarCategoria/"+id, form)
   }
 }

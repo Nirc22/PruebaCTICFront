@@ -23,7 +23,7 @@ export class ProveedorService {
     return this.http.get<Proveedor>(environment.urlApi+"getProveedorById/"+id)//terminar de hacer
   }
 
-  updateProveedor(form:any, id:any){
+  updateProveedor(id:any, form:any){
     return this.http.put<any>(environment.urlApi+"actualizarProveedor/"+id, form)
   }
 }

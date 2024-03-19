@@ -15,10 +15,12 @@
         <td>{{producto.idproducto}}</td>
         <td>{{producto.nombre }}</td>
         <td>{{producto.precio}}</td>
-        <td>{{producto.idcategoria.nombre}}</td>
+        <!-- <td>{{producto.idcategoria.nombre}}</td> -->
         <button (click)="updateCategoria(producto)">{{producto.idcategoria.nombre}}</button>
 
-        <td>{{producto.idproveedor.nombre}}</td>
+        <!-- <td>{{producto.idproveedor.nombre}}</td> -->
+        <button (click)="updateProveedor(producto)">{{producto.idproveedor.nombre}}</button>
+
         <td>{{producto.idproveedor.telefono}}</td>
         <!-- <td>{{pacientes.nmidraza.dsnombre}}</td>
         <td>{{pacientes.fenacimiento}}</td>

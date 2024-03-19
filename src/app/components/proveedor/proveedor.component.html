@@ -1,0 +1,35 @@
+<div class="dialog">
+  <!-- <h1>prueba</h1> -->
+  <h1 mat-dialog-title>Proveedor</h1>
+  <div mat-dialog-content>
+    <form class="form" [formGroup]="formProveedor"> <!--(ngSubmit)="calificar()"-->
+      <div class="formulario">
+        <div class="input">
+          <input type="text" id="nombre" class="fomr-control" formControlName="nombre">
+          <!-- <div *ngIf="calificacion.invalid && (calificacion.dirty || calificacion.touched)">
+            <div *ngIf="calificacion.errors?.['required']">La calificación es obligatoria.</div>
+            <div *ngIf="calificacion.errors?.['min']">La calificación debe ser mayor o igual a 0.</div>
+            <div *ngIf="calificacion.errors?.['max']">La calificación debe ser menor o igual a 5.</div>
+          </div> -->
+          <!-- <div class="alert alert-danger mt-2" [hidden]="calificacion.valid || calificacion.pristine && calificacion.untouched">
+              La calificación es obligatoria.
+            </div> -->
+        </div>
+        <div class="input">
+          <input type="number" id="telefono" class="fomr-control" formControlName="telefono">
+          <!-- <div *ngIf="calificacion.invalid && (calificacion.dirty || calificacion.touched)">
+            <div *ngIf="calificacion.errors?.['required']">La calificación es obligatoria.</div>
+            <div *ngIf="calificacion.errors?.['min']">La calificación debe ser mayor o igual a 0.</div>
+            <div *ngIf="calificacion.errors?.['max']">La calificación debe ser menor o igual a 5.</div>
+          </div> -->
+          <!-- <div class="alert alert-danger mt-2" [hidden]="calificacion.valid || calificacion.pristine && calificacion.untouched">
+              La calificación es obligatoria.
+            </div> -->
+        </div>
+      </div>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close [disabled]="formProveedor.invalid"
+      (click)="crearProveedor()">Crear</button>
+    <button mat-button mat-dialog-close>Cerrar</button>
